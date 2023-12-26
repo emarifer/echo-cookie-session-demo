@@ -1,0 +1,28 @@
+package user
+
+import (
+	"github.com/emarifer/echo-cookie-session-demo/views/layout"
+)
+
+templ Login() {
+	<section class="flex flex-col items-center justify-center h-[100vh] gap-4">
+		<h1 class="text-4xl text-center font-extrabold">
+			Get Login
+		</h1>
+		<button
+ 			hx-post="/login"
+ 			hx-target="body"
+ 			hx-swap="transition:true"
+ 			hx-push-url="true"
+ 			class="block btn btn-accent mx-auto mt-24"
+		>
+			Login
+		</button>
+	</section>
+}
+
+templ LoginIndex(title string, cmp templ.Component) {
+	@layout.Base(title) {
+		@cmp
+	}
+}
